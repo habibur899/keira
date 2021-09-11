@@ -50,7 +50,7 @@ if ( ! function_exists( 'keira_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'keira' ),
+				'primary-menu' => esc_html__( 'Primary Menu', 'keira' ),
 			)
 		);
 
@@ -151,7 +151,7 @@ function keira_scripts() {
 	wp_enqueue_style( 'line-icons-css', get_template_directory_uri() . '/assets/css/line-icons.min.css', array(), _S_VERSION, 'all' );
 	wp_enqueue_style( 'owl-carousel-css', get_template_directory_uri() . '/assets/css/owl.carousel.css', array(), _S_VERSION, 'all' );
 	wp_enqueue_style( 'owl-theme-default-css', get_template_directory_uri() . '/assets/css/owl.theme.default.css', array(), _S_VERSION, 'all' );
-	wp_enqueue_style( 'main-style-css', get_template_directory_uri() . '/assets/css/style.css', array(), _S_VERSION, 'all' );
+	wp_enqueue_style( 'main-style-css', get_template_directory_uri() . '/assets/css/style.css', array(), time(), 'all' );
 	wp_enqueue_style( 'responsive-style-css', get_template_directory_uri() . '/assets/css/responsive.css', array(), _S_VERSION, 'all' );
 	wp_enqueue_style( 'keira-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'keira-style', 'rtl', 'replace' );
@@ -176,6 +176,15 @@ function keira_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'keira_scripts' );
+
+//Menu li class
+function keira_menu_item_class( $classes, $item, $args, $depth ) {
+	$classes[] = 'smooth-menu';
+
+	return $classes;
+}
+
+add_filter( 'nav_menu_css_class', 'keira_menu_item_class', 10, 4 );
 
 /**
  * File require here
