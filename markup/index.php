@@ -1,70 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
 
 <head>
 
     <!--meta tags-->
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="one page business template based on HTML5">
-    <meta name="keywords" content="onepage, business, agency, creative, corporate, responsive, clean, modern">
-    <meta name="author" content="MouriThemes">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--template title-->
-    <title>Keira - One Page Portfolio Template</title>
-
-    <!--==========Favicon==========-->
-
-    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-
-    <!--========== Theme Fonts ==========-->
-
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-    <!--Font Awesome css-->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-
-    <!--Bootstrap css-->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-
-    <!--Magnific popup css-->
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <!--Animate css-->
-    <link rel="stylesheet" href="css/animate.css">
-
-    <!--icon css-->
-    <link rel="stylesheet" href="css/line-icons.min.css">
-
-    <!--Owl carousel css-->
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.default.css">
-
-    <!--theme css-->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!--responsive css-->
-    <link rel="stylesheet" href="css/responsive.css">
-
+	<?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 
 
 <!--preloader starts-->
@@ -462,27 +407,27 @@
                         <div class="row">
                             <div class="col-md-4 col-xs-4 foo-no-padding">
                                 <a class="zoom1" href="images/portfolio/port-1.jpg"><img
-                                        src="images/portfolio/port-1.jpg" alt="photo image"></a>
+                                            src="images/portfolio/port-1.jpg" alt="photo image"></a>
                             </div>
                             <div class="col-md-4 col-xs-4 foo-no-padding">
                                 <a class="zoom1" href="images/portfolio/port-2.jpg"><img
-                                        src="images/portfolio/port-2.jpg" alt="photo image"></a>
+                                            src="images/portfolio/port-2.jpg" alt="photo image"></a>
                             </div>
                             <div class="col-md-4 col-xs-4 foo-no-padding">
                                 <a class="zoom1" href="images/portfolio/port-3.jpg"><img
-                                        src="images/portfolio/port-3.jpg" alt="photo image"></a>
+                                            src="images/portfolio/port-3.jpg" alt="photo image"></a>
                             </div>
                             <div class="col-md-4 col-xs-4 foo-no-padding">
                                 <a class="zoom1" href="images/portfolio/port-4.jpg"><img
-                                        src="images/portfolio/port-4.jpg" alt="photo image"></a>
+                                            src="images/portfolio/port-4.jpg" alt="photo image"></a>
                             </div>
                             <div class="col-md-4 col-xs-4 foo-no-padding">
                                 <a class="zoom1" href="images/portfolio/port-5.jpg"><img
-                                        src="images/portfolio/port-5.jpg" alt="photo image"></a>
+                                            src="images/portfolio/port-5.jpg" alt="photo image"></a>
                             </div>
                             <div class="col-md-4 col-xs-4 foo-no-padding">
                                 <a class="zoom1" href="images/portfolio/port-6.jpg"><img
-                                        src="images/portfolio/port-6.jpg" alt="photo image"></a>
+                                            src="images/portfolio/port-6.jpg" alt="photo image"></a>
                             </div>
                         </div>
                     </div>
@@ -504,47 +449,7 @@
 </footer>
 
 <!--footer ends-->
-
-
-<!--latest jquery-->
-<script src="js/jquery-3.2.1.min.js"></script>
-
-<!--Bootstrap js-->
-<script src="js/bootstrap.min.js"></script>
-
-<!--Magnific popup js-->
-<script src="js/jquery.magnific-popup.min.js"></script>
-
-<!--Owl Carousel js-->
-<script src="js/owl.carousel.js"></script>
-
-<!--particle js-->
-<script src="js/particles.js"></script>
-<script src="js/app.js"></script>
-
-<!--imagesloaded js-->
-<script src="js/imagesloaded.min.js"></script>
-
-<!--isotope js-->
-<script src="js/isotope.pkgd.min.js"></script>
-
-<!--Validator js-->
-<script src="js/validator.js"></script>
-
-<!--Contact js-->
-<script src="js/contact.js"></script>
-
-<!--waypoint js-->
-<script src="js/jquery.waypoints.min.js"></script>
-
-<!--Count js-->
-<script src="js/jquery.counterup.min.js"></script>
-
-<!--wow js-->
-<script src="js/wow.min.js"></script>
-
-<!--Main js-->
-<script src="js/main.js"></script>
+<?php wp_footer(); ?>
 </body>
 
 </html>
