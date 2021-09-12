@@ -35,7 +35,7 @@
 							if ( has_custom_logo() ) {
 								echo '<img class="navbar-brand" src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '">';
 							} else {
-								echo '<a href="' . esc_url( site_url() ) . '"><h1 class="navbar-brand"><span>' . get_bloginfo( 'name' ) . '</span></h1></a>';
+								echo '<a href="' . esc_url( site_url() ) . '"><span class="navbar-brand">' . get_bloginfo( 'name' ) . '</span></a>';
 							}
 							?>
                             <button type="button" class="navbar-toggle" data-toggle="collapse"

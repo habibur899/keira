@@ -21,22 +21,24 @@
 											'col-md-4',
 											'col-sm-6',
 											'col-xs-12',
-                                            'mb-30'
+											'mb-30'
 										) ); ?>>
                                             <div class="single-blog xs-mb-30 wow fadeInDown" data-wow-delay="0.2s">
                                                 <div class="blog-img">
-													<?php the_post_thumbnail(); ?>
+													<?php if ( has_post_thumbnail() ) {
+														the_post_thumbnail();
+													} ?>
                                                 </div>
                                                 <div class="blog-text">
                                                     <h2><a href="<?php the_permalink(); ?>"><?php the_title() ?></a>
                                                     </h2>
                                                     <div class="meta">
-                                                        <span><i class="fa fa-user"></i><?php the_author()?></span>
-                                                        <span><i class="fa fa-comments"></i><?php comments_popup_link( __( 'Leave a comment', 'keira' ), __( '1 Comment', 'keira' ), __( '% Comments', 'keira' ));?></span>
+                                                        <span><i class="fa fa-user"></i><?php the_author() ?></span>
+                                                        <span><i class="fa fa-comments"></i><?php comments_popup_link( __( 'Leave a comment', 'keira' ), __( '1 Comment', 'keira' ), __( '% Comments', 'keira' ) ); ?></span>
                                                     </div>
 													<?php esc_html_e( wp_trim_words( get_the_content(), 17, '' ) ) ?>
                                                     <div class="read-more">
-                                                        <a href="<?php the_permalink();?>"><?php _e('Read More','keira');?></a>
+                                                        <a href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'keira' ); ?></a>
                                                     </div>
                                                 </div>
                                             </div>

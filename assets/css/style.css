@@ -1354,22 +1354,21 @@ h3.discussion-title {
 }
 
 
-.dis-button {
+.comment-reply-link {
     font-weight: 100;
     background: transparent;
     display: inline-block;
     border-radius: 25px;
-    margin-top: 20px;
     text-decoration: none;
     color: #ffb400;
 }
 
-.dis-button:hover {
+.comment-reply-link:hover {
     text-decoration: none;
     color: #333333 !important;
 }
 
-.dis-button:focus{
+.comment-reply-link:focus{
     color: #333;
 }
 
@@ -1377,9 +1376,10 @@ h3.discussion-title {
     margin-bottom: 30px;
 }
 
-.row.discussion-reply {
+ul.children {
     margin-left: 120px;
     margin-top: 40px;
+    list-style: none;
 }
 
 .widget {

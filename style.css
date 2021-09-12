@@ -16,6 +16,10 @@ Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-rea
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+.mb-15 {
+    margin-bottom: 15px;
+}
+
 .mb-30 {
     margin-bottom: 30px !important;
 }
@@ -41,4 +45,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .sticky_navigation .nav li.current-menu-item a {
     color: #ffb400;
+}
+
+.rounded-circle {
+    border-radius: 50%;
 }

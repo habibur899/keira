@@ -189,4 +189,4 @@ add_filter( 'nav_menu_css_class', 'keira_menu_item_class', 10, 4 );
 /**
  * File require here
  */
-
+require_once 'inc/comment-listing.php';
