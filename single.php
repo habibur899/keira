@@ -1,13 +1,18 @@
 <?php get_header() ?>
 <?php get_template_part( 'template-parts/breadcrumbs' ) ?>
-
+<?php if ( is_active_sidebar( 'blog-sidebar' ) ) {
+	$clumn = "8";
+} else {
+	$clumn = "12";
+}
+?>
     <!--single blog starts-->
 <?php while ( have_posts() ) :
 	the_post(); ?>
     <div class="single-blog-area section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-<?php echo esc_attr($clumn)?>">
                     <div class="blog-left">
                         <div class="single-post-blog">
 							<?php if ( has_post_thumbnail() ) {
@@ -32,14 +37,13 @@
                             </div>
 
 
-                                <div class="discussion-form-area"> <!-- comments form area -->
-									<?php
-									if ( comments_open() || get_comments_number() ) :
-										comments_template();
-									endif;
-									?>
-                                </div>
-
+                            <div class="discussion-form-area"> <!-- comments form area -->
+								<?php
+								if ( comments_open() || get_comments_number() ) :
+									comments_template();
+								endif;
+								?>
+                            </div>
 
 
                         </div>

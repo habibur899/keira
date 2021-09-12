@@ -1806,13 +1806,9 @@ h3.widget-title {
     text-transform: none;
 }
 
-.footer-top-area h6 {
+.widget_recent_entries ul li a {
     text-transform: none;
-    font-weight: 400;
     font-size: 13px;
-}
-
-.footer-top-area h6 a {
     color: #d4d4d4;
     font-weight: 700;
 }
@@ -1880,22 +1876,22 @@ ul.social-list li a i {
     margin-top: -10px;
 }
 
-.latest-news ul {
+.widget_recent_entries ul {
     margin: 0;
     padding: 0;
 }
 
-.latest-news ul li {
+.widget_recent_entries ul li {
     list-style: none;
     padding-top: 15px;
 }
 
-.latest-news ul li:first-child {
+.widget_recent_entries ul li:first-child {
     padding-top: 0;
     border-top: none;
 }
 
-.latest-news ul li span {
+.widget_recent_entries ul li time {
     line-height: 1.8;
     margin: 0 0 15px;
     display: inline-block;
@@ -1933,12 +1929,12 @@ ul.social-list li a i {
     margin-bottom: 30px;
 }
 
-.foot-navs{
+.menu-footer-menu-container .menu{
     margin-top: 15px;
     list-style: none;
 }
 
-.foot-navs li a {
+.menu-footer-menu-container .menu li a {
     color: #d4d4d4;
     display: inline-block;
     font-family: "montserratlight",sans-serif;

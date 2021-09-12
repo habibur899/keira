@@ -50,3 +50,48 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .rounded-circle {
     border-radius: 50%;
 }
+
+.wp-block-search {
+    position: relative;
+}
+
+.widget_search {
+    padding: 0px;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+    border: none;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input {
+    border-radius: 0;
+    border: none;
+    padding: 10px 40px 10px 10px;
+}
+
+.wp-block-search button[type="submit"] {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    padding: 11px 15px !important;
+    background: #ffb400;
+    color: #fff;
+    top: 0px;
+    border: 0px solid;
+
+}
+
+.wp-block-search button[type="submit"]:hover {
+    background: #ffffff;
+    transition: .3s;
+}
+
+.wp-block-search input[type="search"] {
+    padding: 10px;
+    border: 0px solid;
+    background: transparent;
+}
+
+.widget_media_gallery ul.blocks-gallery-grid li.blocks-gallery-item {
+    margin: 0;
+}

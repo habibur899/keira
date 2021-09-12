@@ -119,27 +119,6 @@ function keira_content_width() {
 add_action( 'after_setup_theme', 'keira_content_width', 0 );
 
 /**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function keira_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Blog Sidebar', 'keira' ),
-			'id'            => 'blog-sidebar',
-			'description'   => esc_html__( 'Add blog widgets here.', 'keira' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-}
-
-add_action( 'widgets_init', 'keira_widgets_init' );
-
-/**
  * Enqueue scripts and styles.
  */
 function keira_scripts() {
@@ -189,4 +168,8 @@ add_filter( 'nav_menu_css_class', 'keira_menu_item_class', 10, 4 );
 /**
  * File require here
  */
+// Comment Listing
 require_once 'inc/comment-listing.php';
+
+// Register Sidebar
+require_once 'inc/sidebar-register.php';
