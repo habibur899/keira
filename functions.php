@@ -168,3 +168,6 @@ require_once 'inc/sidebar-register.php';
 
 // Bootstrap nav walker
 require_once 'inc/class-wp-bootstrap-navwalker.php';
+
+// Tgm config
+require_once 'inc/tgm-config.php';
