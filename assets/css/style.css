@@ -1932,7 +1932,6 @@ ul.social-list li a i {
 
 .widget_recent_entries ul li {
     list-style: none;
-    padding-top: 15px;
 }
 
 .widget_recent_entries ul li:first-child {
@@ -1941,12 +1940,9 @@ ul.social-list li a i {
 }
 
 .widget_recent_entries ul li time {
-    line-height: 1.8;
-    margin: 0 0 15px;
     display: inline-block;
     font-size: 13px;
     color: #b4b4b4;
-    margin-bottom: 10px;
 }
 
 

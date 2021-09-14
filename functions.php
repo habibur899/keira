@@ -156,14 +156,6 @@ function keira_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'keira_scripts' );
 
-//Menu li class
-function keira_menu_item_class( $classes, $item, $args, $depth ) {
-	$classes[] = 'smooth-menu';
-
-	return $classes;
-}
-
-add_filter( 'nav_menu_css_class', 'keira_menu_item_class', 10, 4 );
 
 /**
  * File require here
@@ -173,3 +165,6 @@ require_once 'inc/comment-listing.php';
 
 // Register Sidebar
 require_once 'inc/sidebar-register.php';
+
+// Bootstrap nav walker
+require_once 'inc/class-wp-bootstrap-navwalker.php';

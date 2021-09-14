@@ -52,6 +52,7 @@
 								<?php wp_nav_menu( array(
 									'theme_location' => 'primary-menu',
 									'menu_class'     => 'menu nav navbar-nav navbar-right',
+									'walker'         => new WP_Bootstrap_Navwalker()
 								) ) ?>
                             </nav>
                         </div>

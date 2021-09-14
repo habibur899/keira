@@ -1,9 +1,9 @@
 /* =================================================
 
- Template Name:  Keira - One Page Portfolio Template
- Author: MouriThemes
+ Template Name:  Keira - One Page Portfolio Theme
+ Author: Habibur Rahman
  Version: 1.0
- Design and Developed by: MouriThemes
+ Design and Developed by: Habibur Rahman
 
  NB: This is the main js of this theme.
 
@@ -132,7 +132,6 @@
             }).trigger('resize');
         }
 
-
     });
 
 
@@ -190,6 +189,8 @@
             .removeClass("fa-minus")
             .addClass("fa-plus");
     });
+
+
 
 
 })(jQuery);
