@@ -1,4 +1,4 @@
-<?php get_header()?>
+<?php get_header() ?>
 
     <!--banner area starts-->
 
@@ -11,11 +11,12 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <h3>Hi I'm Keira Jones</h3>
-                                <h2>Designer & Artist</h2>
-                                <p class="welcome-des">Creating Something Great For Web</p>
+                                <h3><?php esc_html_e( get_theme_mod( 'keira_banner_name' ), 'keira' ); ?></h3>
+                                <h2><?php esc_html_e( get_theme_mod( 'keira_banner_position' ), 'keira' ); ?></h2>
+                                <p class="welcome-des"><?php esc_html_e( get_theme_mod( 'keira_banner_description' ), 'keira' ); ?></p>
                                 <p class="banner-btn">
-                                    <a class="active smooth-menu" href="#portfolio">My Portfolio</a>
+                                    <a class="active smooth-menu"
+                                       href="#portfolio"><?php esc_html_e( get_theme_mod( 'keira_banner_left_button_text' ), 'keira' ); ?></a>
                                     <a class="smooth-menu" href="#contact">Contact Me</a>
                                 </p>
                                 <div class="clearfix"></div>
@@ -39,7 +40,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header">
-                        <h2><span>About</span> Me</h2>
+                        <h2>
+                            <span><?php esc_html_e( get_theme_mod( 'keira_about_me_heading_color' ), 'keira' ); ?></span> <?php esc_html_e( get_theme_mod( 'keira_about_me_heading_white' ), 'keira' ); ?>
+                        </h2>
                         <p class="sec-icon"><i class="fa fa-user"></i></p>
                     </div>
                 </div>
@@ -49,19 +52,21 @@
                 <div class="col-md-5 col-sm-12 col-xs-12">
                     <div class="about-video">
                         <div class="single-video">
-                            <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/about/about.jpg" alt="about image"> <!--change image-->
+                            <img src="<?php echo esc_url( get_theme_mod( 'keira_about_me_image' ), 'keira' ) ?>"
+                                 alt="about image"> <!--change image-->
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-7 col-sm-12 col-xs-12">
                     <div class="about-main">
-                        <h3>Why Me?</h3>
-                        <h2>Professional Designer</h2>
+                        <h3><?php esc_html_e( get_theme_mod( 'keira_about_me_top' ), 'keira' ); ?></h3>
+                        <h2><?php esc_html_e( get_theme_mod( 'keira_about_me_position' ), 'keira' ); ?></h2>
                         <div class="single-about">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            <p><?php esc_html_e( get_theme_mod( 'keira_about_me_description' ), 'keira' ); ?></p>
                         </div>
-                        <a href="#contact" class="smooth-menu">Contact Me</a>
+                        <a target="_blank"
+                           href="<?php echo esc_url( get_theme_mod( 'keira_about_me_button_link' ) ) ?>"><?php esc_html_e( get_theme_mod( 'keira_about_me_button_text' ), 'keira' ); ?></a>
                     </div>
                 </div>
 
@@ -78,60 +83,27 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header">
-                        <h2><span>My</span> Services</h2>
+                        <h2>
+                            <span><?php esc_html_e( get_theme_mod( 'keira_services_heading_color' ), 'keira' ); ?></span> <?php esc_html_e( get_theme_mod( 'keira_services_heading_white' ), 'keira' ); ?>
+                        </h2>
                         <p class="sec-icon"><i class="fa fa-cog"></i></p>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-service active lg-mb-30 xs-mb-30 sm-mb-30">
-                        <i class="icon icon-wallet"></i>
-                        <h4>Digital marketing</h4>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                        <i class="icon icon-wallet animated-icon"></i>
+				<?php $settings = get_theme_mod( 'keira_services_repeater' ); ?>
+
+				<?php foreach ( $settings as $setting ): ?>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="single-service active lg-mb-30 xs-mb-30 sm-mb-30">
+                            <i class="icon icon-wallet"></i>
+                            <h4><?php esc_html_e( $setting['keira_services_heading'], 'keira' ); ?></h4>
+                            <p><?php esc_html_e( $setting['keira_services_description'], 'keira' ); ?></p>
+                            <i class="icon icon-wallet animated-icon"></i>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-service lg-mb-30 xs-mb-30 sm-mb-30">
-                        <i class="icon icon-picture"></i>
-                        <h4>Customer support</h4>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                        <i class="icon icon-picture animated-icon"></i>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-service lg-mb-30 xs-mb-30 sm-mb-30">
-                        <i class="icon icon-laptop"></i>
-                        <h4>web design</h4>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                        <i class="icon icon-laptop animated-icon"></i>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-service xs-mb-30 sm-mb-30">
-                        <i class="icon icon-calendar"></i>
-                        <h4>web development</h4>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                        <i class="icon icon-calendar animated-icon"></i>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-service xs-mb-30">
-                        <i class="icon icon-flag"></i>
-                        <h4>Graphics design</h4>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                        <i class="icon icon-flag animated-icon"></i>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-service">
-                        <i class="icon icon-camera"></i>
-                        <h4>photography</h4>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                        <i class="icon icon-camera animated-icon"></i>
-                    </div>
-                </div>
+				<?php endforeach; ?>
+
             </div>
         </div>
     </div>
@@ -147,29 +119,29 @@
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="single-count count-one xs-mb-30 sm-mb-30">
                             <i class="icon icon-clock"></i>
-                            <h2 class="count">5000</h2> <!--edit here-->
-                            <p>Hours of work</p>
+                            <h2 class="count"><?php esc_html_e(get_theme_mod('keira_statistic_hour_number'),'keira');?></h2> <!--edit here-->
+                            <p><?php esc_html_e(get_theme_mod('keira_statistic_hour_title'),'keira');?></p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="single-count count-two xs-mb-30 sm-mb-30">
                             <i class="icon icon-map-pin"></i>
-                            <h2 class="count">50</h2> <!--edit here-->
-                            <p>Offices around the world</p>
+                            <h2 class="count"><?php esc_html_e(get_theme_mod('keira_statistic_location_number'),'keira');?></h2> <!--edit here-->
+                            <p><?php esc_html_e(get_theme_mod('keira_statistic_location_title'),'keira');?></p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="single-count count-three xs-mb-30">
                             <i class="icon icon-happy"></i>
-                            <h2 class="count">3000</h2> <!--edit here-->
-                            <p>Happy Customer</p>
+                            <h2 class="count"><?php esc_html_e(get_theme_mod('keira_statistic_customer_number'),'keira');?></h2> <!--edit here-->
+                            <p><?php esc_html_e(get_theme_mod('keira_statistic_customer_title'),'keira');?></p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="single-count count-four">
                             <i class="icon icon-trophy"></i>
-                            <h2 class="count">200</h2> <!--edit here-->
-                            <p>Business Awards Won</p>
+                            <h2 class="count"><?php esc_html_e(get_theme_mod('keira_statistic_awards_number'),'keira');?></h2> <!--edit here-->
+                            <p><?php esc_html_e(get_theme_mod('keira_statistic_awards_title'),'keira');?></p>
                         </div>
                     </div>
                 </div>
@@ -215,8 +187,10 @@
 
                     <div class="col-md-4 col-sm-6 col-xs-12 single-port design photography">
                         <div class="project-item">
-                            <a href="<?php echo esc_url(get_template_directory_uri())?>/assets/images/portfolio/port-1.jpg" class="zoom1"> <!--edit image-->
-                                <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/portfolio/port-1.jpg" alt="portfolio image"> <!--edit image-->
+                            <a href="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-1.jpg"
+                               class="zoom1"> <!--edit image-->
+                                <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-1.jpg"
+                                     alt="portfolio image"> <!--edit image-->
                                 <div class="overlay">
                                     <div class="overlay-inner">
                                         <h4>Project One</h4>
@@ -229,8 +203,10 @@
 
                     <div class="col-md-4 col-sm-6 col-xs-12 single-port design">
                         <div class="project-item">
-                            <a href="<?php echo esc_url(get_template_directory_uri())?>/assets/images/portfolio/port-3.jpg" class="zoom1"> <!--edit image-->
-                                <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/portfolio/port-3.jpg" alt="portfolio image"> <!--edit image-->
+                            <a href="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-3.jpg"
+                               class="zoom1"> <!--edit image-->
+                                <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-3.jpg"
+                                     alt="portfolio image"> <!--edit image-->
                                 <div class="overlay">
                                     <div class="overlay-inner">
                                         <h4>Project Two</h4>
@@ -243,8 +219,10 @@
 
                     <div class="col-md-4 col-sm-6 col-xs-12 single-port photography">
                         <div class="project-item">
-                            <a href="<?php echo esc_url(get_template_directory_uri())?>/assets/images/portfolio/port-4.jpg" class="zoom1"> <!--edit image-->
-                                <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/portfolio/port-4.jpg" alt="portfolio image"> <!--edit image-->
+                            <a href="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-4.jpg"
+                               class="zoom1"> <!--edit image-->
+                                <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-4.jpg"
+                                     alt="portfolio image"> <!--edit image-->
                                 <div class="overlay">
                                     <div class="overlay-inner">
                                         <h4>Project Three</h4>
@@ -257,8 +235,10 @@
 
                     <div class="col-md-4 col-sm-6 col-xs-12 single-port web video">
                         <div class="project-item">
-                            <a href="<?php echo esc_url(get_template_directory_uri())?>/assets/images/portfolio/port-6.jpg" class="zoom1"> <!--edit image-->
-                                <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/portfolio/port-6.jpg" alt="portfolio image"> <!--edit image-->
+                            <a href="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-6.jpg"
+                               class="zoom1"> <!--edit image-->
+                                <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-6.jpg"
+                                     alt="portfolio image"> <!--edit image-->
                                 <div class="overlay">
                                     <div class="overlay-inner">
                                         <h4>Project Four</h4>
@@ -271,8 +251,10 @@
 
                     <div class="col-md-4 col-sm-6 col-xs-12 single-port web design">
                         <div class="project-item">
-                            <a href="<?php echo esc_url(get_template_directory_uri())?>/assets/images/portfolio/port-2.jpg" class="zoom1"> <!--edit image-->
-                                <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/portfolio/port-2.jpg" alt="portfolio image"> <!--edit image-->
+                            <a href="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-2.jpg"
+                               class="zoom1"> <!--edit image-->
+                                <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-2.jpg"
+                                     alt="portfolio image"> <!--edit image-->
                                 <div class="overlay">
                                     <div class="overlay-inner">
                                         <h4>Project Five</h4>
@@ -285,8 +267,10 @@
 
                     <div class="col-md-4 col-sm-6 col-xs-12 single-port branding video">
                         <div class="project-item">
-                            <a href="<?php echo esc_url(get_template_directory_uri())?>/assets/images/portfolio/port-5.jpg" class="zoom1"> <!--edit image-->
-                                <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/portfolio/port-5.jpg" alt="portfolio image"> <!--edit image-->
+                            <a href="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-5.jpg"
+                               class="zoom1"> <!--edit image-->
+                                <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-5.jpg"
+                                     alt="portfolio image"> <!--edit image-->
                                 <div class="overlay">
                                     <div class="overlay-inner">
                                         <h4>Project Six</h4>
@@ -409,7 +393,8 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="team-member lg-mb-30 xs-mb-30 sm-mb-30">
                         <div class="team-image team-overlay">
-                            <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/team/4.jpg" alt="team image" class="img-responsive"> <!--edit image-->
+                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/team/4.jpg"
+                                 alt="team image" class="img-responsive"> <!--edit image-->
                             <div class="social-area">
                                 <div class="team-text">
                                     <div class="team-text-middle">
@@ -433,7 +418,8 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="team-member lg-mb-30 xs-mb-30 sm-mb-30">
                         <div class="team-image team-overlay">
-                            <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/team/2.jpg" alt="team image" class="img-responsive"> <!--edit image-->
+                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/team/2.jpg"
+                                 alt="team image" class="img-responsive"> <!--edit image-->
                             <div class="social-area">
                                 <div class="team-text">
                                     <div class="team-text-middle">
@@ -457,7 +443,8 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="team-member lg-mb-30 xs-mb-30 sm-mb-30">
                         <div class="team-image team-overlay">
-                            <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/team/3.jpg" alt="team image" class="img-responsive"> <!--edit image-->
+                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/team/3.jpg"
+                                 alt="team image" class="img-responsive"> <!--edit image-->
                             <div class="social-area">
                                 <div class="team-text">
                                     <div class="team-text-middle">
@@ -480,7 +467,8 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="team-member xs-mb-30 sm-mb-30">
                         <div class="team-image team-overlay">
-                            <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/team/1.jpg" alt="team image" class="img-responsive"> <!--edit image-->
+                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/team/1.jpg"
+                                 alt="team image" class="img-responsive"> <!--edit image-->
                             <div class="social-area">
                                 <div class="team-text">
                                     <div class="team-text-middle">
@@ -504,7 +492,8 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="team-member xs-mb-30">
                         <div class="team-image team-overlay">
-                            <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/team/5.jpg" alt="team image" class="img-responsive"> <!--edit image-->
+                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/team/5.jpg"
+                                 alt="team image" class="img-responsive"> <!--edit image-->
                             <div class="social-area">
                                 <div class="team-text">
                                     <div class="team-text-middle">
@@ -528,7 +517,8 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="team-member">
                         <div class="team-image team-overlay">
-                            <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/team/6.jpg" alt="team image" class="img-responsive"> <!--edit image-->
+                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/team/6.jpg"
+                                 alt="team image" class="img-responsive"> <!--edit image-->
                             <div class="social-area">
                                 <div class="team-text">
                                     <div class="team-text-middle">
@@ -572,7 +562,8 @@
                         <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="single-blog xs-mb-30 wow fadeInDown" data-wow-delay="0.2s">
                                 <div class="blog-img">
-                                    <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/blog/blog1.jpg" alt="blog image"> <!--edit image-->
+                                    <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/blog/blog1.jpg"
+                                         alt="blog image"> <!--edit image-->
                                 </div>
                                 <div class="blog-text">
                                     <h2><a href="single-blog.html">Best CMS For Designers</a></h2>
@@ -580,14 +571,16 @@
                                         <span><i class="fa fa-user"></i>admin</span>
                                         <span><i class="fa fa-comments"></i>5 Comments</span>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet sed do minim aute dolor velit esse cillum dolore elit Nobis quas</p>
+                                    <p>Lorem ipsum dolor sit amet sed do minim aute dolor velit esse cillum dolore elit
+                                        Nobis quas</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 col-xs-12">
                             <div class="single-blog xs-mb-30 wow fadeInDown" data-wow-delay="0.4s">
                                 <div class="blog-img">
-                                    <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/blog/blog2.jpg" alt="blog image"> <!--edit image-->
+                                    <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/blog/blog2.jpg"
+                                         alt="blog image"> <!--edit image-->
                                 </div>
                                 <div class="blog-text">
                                     <h2><a href="single-blog.html">Importance of UI / UX</a></h2>
@@ -595,14 +588,16 @@
                                         <span><i class="fa fa-user"></i>admin</span>
                                         <span><i class="fa fa-comments"></i>5 Comments</span>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet sed do minim aute dolor velit esse cillum dolore elit Nobis quas</p>
+                                    <p>Lorem ipsum dolor sit amet sed do minim aute dolor velit esse cillum dolore elit
+                                        Nobis quas</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-6 col-xs-12 hidden-sm">
                             <div class="single-blog wow fadeInDown" data-wow-delay="0.6s">
                                 <div class="blog-img">
-                                    <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/blog/blog3.jpg" alt="blog image"> <!--edit image-->
+                                    <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/blog/blog3.jpg"
+                                         alt="blog image"> <!--edit image-->
                                 </div>
                                 <div class="blog-text">
                                     <h2><a href="single-blog.html">Recent Website Trends</a></h2>
@@ -610,7 +605,8 @@
                                         <span><i class="fa fa-user"></i>admin</span>
                                         <span><i class="fa fa-comments"></i>5 Comments</span>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet sed do minim aute dolor velit esse cillum dolore elit Nobis quas</p>
+                                    <p>Lorem ipsum dolor sit amet sed do minim aute dolor velit esse cillum dolore elit
+                                        Nobis quas</p>
                                 </div>
                             </div>
                         </div>
@@ -639,19 +635,25 @@
                     <div class="owl-carousel" id="testimonial-carousel">
 
                         <div class="item ">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type </p>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type </p>
                             <h5><strong>Richard Jhonson</strong></h5> <!--change reviewer name-->
                             <h6>Designation, Company</h6>
                         </div>
 
                         <div class="item ">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type  </p>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type </p>
                             <h5><strong>Richa Chadda</strong></h5> <!--change reviewer name-->
                             <h6>Designation, Company</h6>
                         </div>
 
                         <div class="item ">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type  </p>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type </p>
                             <h5><strong>John Brenson</strong></h5> <!--change reviewer name-->
                             <h6>Designation, Company</h6>
                         </div>
@@ -689,7 +691,9 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input id="form_name" type="text" name="name" class="form-control" placeholder="Name *" required="required" data-error="Fullname is required.">
+                                            <input id="form_name" type="text" name="name" class="form-control"
+                                                   placeholder="Name *" required="required"
+                                                   data-error="Fullname is required.">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
@@ -697,7 +701,9 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input id="form_email" type="email" name="email" class="form-control" placeholder="Email *" required="required" data-error="Valid email is required.">
+                                            <input id="form_email" type="email" name="email" class="form-control"
+                                                   placeholder="Email *" required="required"
+                                                   data-error="Valid email is required.">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
@@ -705,7 +711,9 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input id="form_subject" type="text" name="subject" class="form-control" placeholder="Subject *" required="required" data-error="Subject is required.">
+                                            <input id="form_subject" type="text" name="subject" class="form-control"
+                                                   placeholder="Subject *" required="required"
+                                                   data-error="Subject is required.">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
@@ -713,7 +721,9 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <textarea id="form_message" name="message" class="form-control" placeholder="Message *" rows="4" required="required" data-error="Leave a message for me"></textarea>
+                                            <textarea id="form_message" name="message" class="form-control"
+                                                      placeholder="Message *" rows="4" required="required"
+                                                      data-error="Leave a message for me"></textarea>
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
@@ -737,14 +747,17 @@
                                     <!-- Panel Heading Starts -->
                                     <div class="panel-heading">
                                         <h5 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#con-right-accordion" href="#collapse1">What is order Policy?</a>
+                                            <a data-toggle="collapse" data-parent="#con-right-accordion"
+                                               href="#collapse1">What is order Policy?</a>
                                         </h5>
                                     </div>
                                     <!-- Panel Heading Ends -->
                                     <!-- Panel Body Starts -->
                                     <div id="collapse1" class="panel-collapse collapse in">
                                         <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi eius est expedita illum praesentium quaerat quia, reprehenderit sequi temporibus ut voluptate voluptatum. Enim, officia.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi
+                                                eius est expedita illum praesentium quaerat quia, reprehenderit sequi
+                                                temporibus ut voluptate voluptatum. Enim, officia.</p>
                                         </div>
                                     </div>
                                     <!-- Panel Body Ends -->
@@ -755,14 +768,17 @@
                                     <!-- Panel Heading Starts -->
                                     <div class="panel-heading">
                                         <h5 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#con-right-accordion" href="#collapse2">When You receive Order?</a>
+                                            <a data-toggle="collapse" data-parent="#con-right-accordion"
+                                               href="#collapse2">When You receive Order?</a>
                                         </h5>
                                     </div>
                                     <!-- Panel Heading Ends -->
                                     <!-- Panel Body Starts -->
                                     <div id="collapse2" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi eius est expedita illum praesentium quaerat quia, reprehenderit sequi temporibus ut voluptate voluptatum. Enim, officia.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi
+                                                eius est expedita illum praesentium quaerat quia, reprehenderit sequi
+                                                temporibus ut voluptate voluptatum. Enim, officia.</p>
                                         </div>
                                     </div>
                                     <!-- Panel Body Ends -->
@@ -773,14 +789,17 @@
                                     <!-- Panel Heading Starts -->
                                     <div class="panel-heading">
                                         <h5 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#con-right-accordion" href="#collapse3">How Does it Work?</a>
+                                            <a data-toggle="collapse" data-parent="#con-right-accordion"
+                                               href="#collapse3">How Does it Work?</a>
                                         </h5>
                                     </div>
                                     <!-- Panel Heading Ends -->
                                     <!-- Panel Body Starts -->
                                     <div id="collapse3" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi eius est expedita illum praesentium quaerat quia, reprehenderit sequi temporibus ut voluptate voluptatum. Enim, officia.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi
+                                                eius est expedita illum praesentium quaerat quia, reprehenderit sequi
+                                                temporibus ut voluptate voluptatum. Enim, officia.</p>
                                         </div>
                                     </div>
                                     <!-- Panel Body Ends -->
@@ -791,14 +810,17 @@
                                     <!-- Panel Heading Starts -->
                                     <div class="panel-heading">
                                         <h5 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#con-right-accordion" href="#collapse4">How to Refund Order?</a>
+                                            <a data-toggle="collapse" data-parent="#con-right-accordion"
+                                               href="#collapse4">How to Refund Order?</a>
                                         </h5>
                                     </div>
                                     <!-- Panel Heading Ends -->
                                     <!-- Panel Body Starts -->
                                     <div id="collapse4" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi eius est expedita illum praesentium quaerat quia, reprehenderit sequi temporibus ut voluptate voluptatum. Enim, officia.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi
+                                                eius est expedita illum praesentium quaerat quia, reprehenderit sequi
+                                                temporibus ut voluptate voluptatum. Enim, officia.</p>
                                         </div>
                                     </div>
                                     <!-- Panel Body Ends -->
@@ -825,23 +847,28 @@
                     <div class="owl-carousel" id="client-carousel">
 
                         <div class="item">
-                            <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/clients/1.png" alt="client image"> <!--edit image-->
+                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/clients/1.png"
+                                 alt="client image"> <!--edit image-->
                         </div>
 
                         <div class="item">
-                            <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/clients/2.png" alt="client image"> <!--edit image-->
+                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/clients/2.png"
+                                 alt="client image"> <!--edit image-->
                         </div>
 
                         <div class="item">
-                            <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/clients/3.png" alt="client image"> <!--edit image-->
+                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/clients/3.png"
+                                 alt="client image"> <!--edit image-->
                         </div>
 
                         <div class="item">
-                            <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/clients/4.png" alt="client image"> <!--edit image-->
+                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/clients/4.png"
+                                 alt="client image"> <!--edit image-->
                         </div>
 
                         <div class="item">
-                            <img src="<?php echo esc_url(get_template_directory_uri())?>/assets/images/clients/5.png" alt="client image"> <!--edit image-->
+                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/clients/5.png"
+                                 alt="client image"> <!--edit image-->
                         </div>
                     </div>
                 </div>
@@ -850,4 +877,4 @@
     </div>
 
     <!--client area Ends-->
-<?php get_footer()?>
+<?php get_footer() ?>

@@ -64,6 +64,11 @@ function my_theme_register_required_plugins() {
 			'name'     => 'Kirki',
 			'slug'     => 'kirki',
 			'required' => true
+		),
+		array(
+			'name'     => 'Font Awesome',
+			'slug'     => 'font-awesome',
+			'required' => true
 		)
 
 	);

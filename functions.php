@@ -156,7 +156,6 @@ function keira_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'keira_scripts' );
 
-
 /**
  * File require here
  */
@@ -171,3 +170,6 @@ require_once 'inc/class-wp-bootstrap-navwalker.php';
 
 // Tgm config
 require_once 'inc/tgm-config.php';
+
+// Kirki
+require_once 'inc/kirki-customizer-config.php';

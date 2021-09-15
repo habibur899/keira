@@ -374,10 +374,6 @@ img {
 /* --------- 5. Banner area css starts -----------*/
 
 .banner-area {
-    background-image: url(../images/home/banner1.jpg); /*edit image*/
-    background-position: center;
-    -webkit-background-size: cover;
-    background-size: cover;
     position: relative;
     height: 100%;
 }

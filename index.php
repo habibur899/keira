@@ -36,7 +36,7 @@
                                                         <span><i class="fa fa-user"></i><?php the_author() ?></span>
                                                         <span><i class="fa fa-comments"></i><?php comments_popup_link( __( 'Leave a comment', 'keira' ), __( '1 Comment', 'keira' ), __( '% Comments', 'keira' ) ); ?></span>
                                                     </div>
-													<?php esc_html_e( wp_trim_words( get_the_content(), 17, '' ) ) ?>
+													<?php esc_html_e( wp_trim_words( get_the_content(), 17, ' ' ),'keira' ) ?>
                                                     <div class="read-more">
                                                         <a href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'keira' ); ?></a>
                                                     </div>
