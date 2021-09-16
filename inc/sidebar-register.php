@@ -66,18 +66,6 @@ function keira_widgets_init() {
 			'after_title'   => '</h3>',
 		)
 	);
-	//Footer copyright
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Copyright', 'keira' ),
-			'id'            => 'footer-copyright',
-			'description'   => esc_html__( 'Add footer copyright widgets here.', 'keira' ),
-			'before_widget' => '<div id="%1$s" class="col-md-12 text-center %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		)
-	);
 }
 
 add_action( 'widgets_init', 'keira_widgets_init' );

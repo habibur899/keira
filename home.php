@@ -91,14 +91,14 @@
                 </div>
             </div>
             <div class="row">
-				<?php $settings = get_theme_mod( 'keira_services_repeater' ); ?>
+				<?php $services = get_theme_mod( 'keira_services_repeater' ); ?>
 
-				<?php foreach ( $settings as $setting ): ?>
+				<?php foreach ( $services as $service ): ?>
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="single-service active lg-mb-30 xs-mb-30 sm-mb-30">
                             <i class="icon icon-wallet"></i>
-                            <h4><?php esc_html_e( $setting['keira_services_heading'], 'keira' ); ?></h4>
-                            <p><?php esc_html_e( $setting['keira_services_description'], 'keira' ); ?></p>
+                            <h4><?php esc_html_e( $service['keira_services_heading'], 'keira' ); ?></h4>
+                            <p><?php esc_html_e( $service['keira_services_description'], 'keira' ); ?></p>
                             <i class="icon icon-wallet animated-icon"></i>
                         </div>
                     </div>
@@ -178,7 +178,8 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <ul class="port-nav-list">
-                                <li><a class="img-filter active" data-filter="*"><?php esc_html_e('All','keira');?></a></li>
+                                <li><a class="img-filter active"
+                                       data-filter="*"><?php esc_html_e( 'All', 'keira' ); ?></a></li>
 								<?php $terms = get_terms( 'portfolio_category' );
 								foreach ( $terms as $term ) :?>
                                     <li><a class="img-filter"
@@ -232,93 +233,6 @@
 
     <!--portfolio area ends-->
 
-    <!--pricing area starts-->
-
-    <div id="pricing" class="pricing-area section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-header">
-                        <h2><span>My</span> Pricing</h2>
-                        <p class="sec-icon"><i class="fa fa-usd"></i></p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-4">
-                    <div class="single-pricing xs-mb-30">
-                        <div class="single-pricing-header">
-                            <h3 class="heading">Standard</h3>
-                            <span class="price-value">
-                                <span class="currency">$</span>29<span class="month">/&nbsp;mo</span> <!--edit here-->
-                            </span>
-                        </div>
-                        <div class="pricing-content"> <!--edit here-->
-                            <ul>
-                                <li>2GB Disk Space</li>
-                                <li>512 MB Memory</li>
-                                <li>5 Email Address</li>
-                                <li>10 Subdomains</li>
-                                <li>15 Domains</li>
-                                <li>Enhanced Security</li>
-                                <li>Unlimited Support</li>
-                            </ul>
-                            <a href="#" class="read">Choose Plan</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-4">
-                    <div class="single-pricing xs-mb-30 active">
-                        <div class="single-pricing-header">
-                            <h3 class="heading">Business</h3>
-                            <span class="price-value">
-                                <span class="currency">$</span>49<span class="month">/&nbsp;mo</span> <!--edit here-->
-                            </span>
-                        </div>
-                        <div class="pricing-content"> <!--edit here-->
-                            <ul>
-                                <li>5GB Disk Space</li>
-                                <li>1 GB Memory</li>
-                                <li>25 Email Address</li>
-                                <li>50 Subdomains</li>
-                                <li>75 Domains</li>
-                                <li>Enhanced Security</li>
-                                <li>Unlimited Support</li>
-                            </ul>
-                            <a href="#" class="read">Choose Plan</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-4">
-                    <div class="single-pricing">
-                        <div class="single-pricing-header">
-                            <h3 class="heading">Premium</h3>
-                            <span class="price-value">
-                                <span class="currency">$</span>79<span class="month">/&nbsp;mo</span> <!--edit here-->
-                            </span>
-                        </div>
-                        <div class="pricing-content"> <!--edit here-->
-                            <ul>
-                                <li>10GB Disk Space</li>
-                                <li>2 GB Memory</li>
-                                <li>50 Email Address</li>
-                                <li>70 Subdomains</li>
-                                <li>100 Domains</li>
-                                <li>Enhanced Security</li>
-                                <li>Unlimited Support</li>
-                            </ul>
-                            <a href="#" class="read">Choose Plan</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--pricing area ends-->
-
     <!--team area starts-->
 
     <div id="team" class="team-area section-padding">
@@ -326,161 +240,52 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header">
-                        <h2><span>My</span> Team</h2>
+                        <h2>
+                            <span><?php esc_html_e( get_theme_mod( 'keira_team_heading_color' ), 'keira' ); ?></span> <?php esc_html_e( get_theme_mod( 'keira_team_heading_white' ), 'keira' ); ?>
+                        </h2>
                         <p class="sec-icon"><i class="fa fa-users"></i></p>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-4 col-sm-6">
-                    <div class="team-member lg-mb-30 xs-mb-30 sm-mb-30">
-                        <div class="team-image team-overlay">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/team/4.jpg"
-                                 alt="team image" class="img-responsive"> <!--edit image-->
-                            <div class="social-area">
-                                <div class="team-text">
-                                    <div class="team-text-middle">
-                                        <ul class="list-inline">
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-designation">
-                            <h2>Robert Myers</h2>
-                            <p>WordPress Developer</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-md-4 col-sm-6">
-                    <div class="team-member lg-mb-30 xs-mb-30 sm-mb-30">
-                        <div class="team-image team-overlay">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/team/2.jpg"
-                                 alt="team image" class="img-responsive"> <!--edit image-->
-                            <div class="social-area">
-                                <div class="team-text">
-                                    <div class="team-text-middle">
-                                        <ul class="list-inline">
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-designation">
-                            <h2>Albert Jones</h2>
-                            <p>Laravel Developer</p>
-                        </div>
-                    </div>
-                </div>
+				<?php $teams = get_theme_mod( 'keira_team_repeater' ); ?>
 
-                <div class="col-md-4 col-sm-6">
-                    <div class="team-member lg-mb-30 xs-mb-30 sm-mb-30">
-                        <div class="team-image team-overlay">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/team/3.jpg"
-                                 alt="team image" class="img-responsive"> <!--edit image-->
-                            <div class="social-area">
-                                <div class="team-text">
-                                    <div class="team-text-middle">
-                                        <ul class="list-inline">
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        </ul>
+				<?php foreach ( $teams as $team ) : ?>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="team-member lg-mb-30 xs-mb-30 sm-mb-30">
+                            <div class="team-image team-overlay">
+                                <img src="<?php echo esc_url( wp_get_attachment_image_src( $team['keira_team_image'] )[0], 'keira' ) ?>"
+                                     alt="team image" class="img-responsive"> <!--edit image-->
+                                <div class="social-area">
+                                    <div class="team-text">
+                                        <div class="team-text-middle">
+                                            <ul class="list-inline">
+                                                <li><a target="_blank"
+                                                       href="<?php echo esc_url( $team['keira_team_fb_url'] ) ?>"><i
+                                                                class="fa fa-facebook"></i></a></li>
+                                                <li><a target="_blank"
+                                                       href="<?php echo esc_url( $team['keira_team_tw_url'] ) ?>"><i
+                                                                class="fa fa-twitter"></i></a></li>
+                                                <li><a target="_blank"
+                                                       href="<?php echo esc_url( $team['keira_team_ldin_url'] ) ?>"><i
+                                                                class="fa fa-linkedin"></i></a></li>
+                                                <li><a target="_blank"
+                                                       href="<?php echo esc_url( $team['keira_team_pin_url'] ) ?>"><i
+                                                                class="fa fa-pinterest"></i></a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="team-designation">
-                            <h2>Andrew Miller</h2>
-                            <p>Graphics Designer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="team-member xs-mb-30 sm-mb-30">
-                        <div class="team-image team-overlay">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/team/1.jpg"
-                                 alt="team image" class="img-responsive"> <!--edit image-->
-                            <div class="social-area">
-                                <div class="team-text">
-                                    <div class="team-text-middle">
-                                        <ul class="list-inline">
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            <div class="team-designation">
+                                <h2><?php esc_html_e( $team['keira_team_name'], 'keira' ) ?></h2>
+                                <p><?php esc_html_e( $team['keira_team_position'], 'keira' ) ?></p>
                             </div>
                         </div>
-                        <div class="team-designation">
-                            <h2>Alfred Davis</h2>
-                            <p>SEO Exapert</p>
-                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6">
-                    <div class="team-member xs-mb-30">
-                        <div class="team-image team-overlay">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/team/5.jpg"
-                                 alt="team image" class="img-responsive"> <!--edit image-->
-                            <div class="social-area">
-                                <div class="team-text">
-                                    <div class="team-text-middle">
-                                        <ul class="list-inline">
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-designation">
-                            <h2>Arthur Brown</h2>
-                            <p>UI / UX Desiger</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4 col-sm-6">
-                    <div class="team-member">
-                        <div class="team-image team-overlay">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/team/6.jpg"
-                                 alt="team image" class="img-responsive"> <!--edit image-->
-                            <div class="social-area">
-                                <div class="team-text">
-                                    <div class="team-text-middle">
-                                        <ul class="list-inline">
-                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-designation">
-                            <h2>Anthony Garcia</h2>
-                            <p>Joomla Developer</p>
-                        </div>
-                    </div>
-                </div>
+				<?php endforeach; ?>
             </div>
         </div>
     </div>
@@ -494,7 +299,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header">
-                        <h2><span>Our</span> Blog</h2>
+                        <h2>
+                            <span><?php esc_html_e( get_theme_mod( 'keira_blog_heading_color' ), 'keira' ); ?></span> <?php esc_html_e( get_theme_mod( 'keira_blog_heading_white' ), 'keira' ); ?>
+                        </h2>
                         <p class="sec-icon"><i class="fa fa-weixin"></i></p>
                     </div>
                 </div>
@@ -502,57 +309,28 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="blog-section">
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="single-blog xs-mb-30 wow fadeInDown" data-wow-delay="0.2s">
-                                <div class="blog-img">
-                                    <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/blog/blog1.jpg"
-                                         alt="blog image"> <!--edit image-->
-                                </div>
-                                <div class="blog-text">
-                                    <h2><a href="single-blog.html">Best CMS For Designers</a></h2>
-                                    <div class="meta">
-                                        <span><i class="fa fa-user"></i>admin</span>
-                                        <span><i class="fa fa-comments"></i>5 Comments</span>
+						<?php $front_page_post = new WP_Query( array(
+							'post_type'      => 'post',
+							'posts_per_page' => 3
+						) ) ?>
+						<?php if ( have_posts() ):while ( $front_page_post->have_posts() ):$front_page_post->the_post(); ?>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="single-blog xs-mb-30 wow fadeInDown" data-wow-delay="0.2s">
+                                    <div class="blog-img">
+										<?php the_post_thumbnail(); ?>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet sed do minim aute dolor velit esse cillum dolore elit
-                                        Nobis quas</p>
+                                    <div class="blog-text">
+                                        <h2><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h2>
+                                        <div class="meta">
+                                            <span><i class="fa fa-user"></i><?php the_author() ?></span>
+                                            <span><i class="fa fa-comments"></i><?php comments_popup_link( __( 'Leave a comment', 'keira' ), __( '1 Comment', 'keira' ), __( '% Comments', 'keira' ) ); ?></span>
+                                        </div>
+										<?php esc_html_e( wp_trim_words( get_the_content(), 17, ' ' ), 'keira' ) ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <div class="single-blog xs-mb-30 wow fadeInDown" data-wow-delay="0.4s">
-                                <div class="blog-img">
-                                    <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/blog/blog2.jpg"
-                                         alt="blog image"> <!--edit image-->
-                                </div>
-                                <div class="blog-text">
-                                    <h2><a href="single-blog.html">Importance of UI / UX</a></h2>
-                                    <div class="meta">
-                                        <span><i class="fa fa-user"></i>admin</span>
-                                        <span><i class="fa fa-comments"></i>5 Comments</span>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet sed do minim aute dolor velit esse cillum dolore elit
-                                        Nobis quas</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12 hidden-sm">
-                            <div class="single-blog wow fadeInDown" data-wow-delay="0.6s">
-                                <div class="blog-img">
-                                    <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/blog/blog3.jpg"
-                                         alt="blog image"> <!--edit image-->
-                                </div>
-                                <div class="blog-text">
-                                    <h2><a href="single-blog.html">Recent Website Trends</a></h2>
-                                    <div class="meta">
-                                        <span><i class="fa fa-user"></i>admin</span>
-                                        <span><i class="fa fa-comments"></i>5 Comments</span>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet sed do minim aute dolor velit esse cillum dolore elit
-                                        Nobis quas</p>
-                                </div>
-                            </div>
-                        </div>
+						<?php endwhile;endif; ?>
+
                     </div>
                 </div>
             </div>
@@ -568,7 +346,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header">
-                        <h2><span>Clients</span> Says</h2>
+                        <h2>
+                            <span><?php esc_html_e( get_theme_mod( 'keira_testimonial_heading_color' ), 'keira' ); ?></span> <?php esc_html_e( get_theme_mod( 'keira_testimonial_heading_white' ), 'keira' ); ?>
+                        </h2>
                         <p class="sec-icon"><i class="fa fa-comment"></i></p>
                     </div>
                 </div>
@@ -577,29 +357,17 @@
                 <div class="col-md-12">
                     <div class="owl-carousel" id="testimonial-carousel">
 
-                        <div class="item ">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                printer took a galley of type </p>
-                            <h5><strong>Richard Jhonson</strong></h5> <!--change reviewer name-->
-                            <h6>Designation, Company</h6>
-                        </div>
+						<?php $testimonials = get_theme_mod( 'keira_testimonial_repeater' );
+						foreach ( $testimonials as $testimonial ) : ?>
+                            <div class="item ">
+                                <p><?php esc_html_e( $testimonial['keira_testimonial_says'], 'keira' ) ?></p>
+                                <h5>
+                                    <strong><?php esc_html_e( $testimonial['keira_testimonial_name'], 'keira' ) ?></strong>
+                                </h5> <!--change reviewer name-->
+                                <h6><?php esc_html_e( $testimonial['keira_testimonial_position'], 'keira' ) ?></h6>
+                            </div>
+						<?php endforeach; ?>
 
-                        <div class="item ">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                printer took a galley of type </p>
-                            <h5><strong>Richa Chadda</strong></h5> <!--change reviewer name-->
-                            <h6>Designation, Company</h6>
-                        </div>
-
-                        <div class="item ">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                printer took a galley of type </p>
-                            <h5><strong>John Brenson</strong></h5> <!--change reviewer name-->
-                            <h6>Designation, Company</h6>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -789,30 +557,14 @@
                 <div class="col-md-12">
                     <div class="owl-carousel" id="client-carousel">
 
-                        <div class="item">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/clients/1.png"
-                                 alt="client image"> <!--edit image-->
-                        </div>
+						<?php $clients = get_theme_mod( 'keira_client_repeater' ); ?>
+						<?php foreach ( $clients as $client ) : ?>
+                            <div class="item">
+                                <img src="<?php echo esc_url( wp_get_attachment_image_src( $client['keira_client_logo'] )[0], 'keira' ) ?>"
+                                     alt="client image"> <!--edit image-->
+                            </div>
 
-                        <div class="item">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/clients/2.png"
-                                 alt="client image"> <!--edit image-->
-                        </div>
-
-                        <div class="item">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/clients/3.png"
-                                 alt="client image"> <!--edit image-->
-                        </div>
-
-                        <div class="item">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/clients/4.png"
-                                 alt="client image"> <!--edit image-->
-                        </div>
-
-                        <div class="item">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/clients/5.png"
-                                 alt="client image"> <!--edit image-->
-                        </div>
+						<?php endforeach; ?>
                     </div>
                 </div>
             </div>

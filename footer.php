@@ -11,21 +11,21 @@
                 </div>
 
                 <div class="col-md-3 col-sm-6">
-	                <?php if ( is_active_sidebar( 'footer-two' ) ) {
-		                dynamic_sidebar( 'footer-two' );
-	                } ?>
+					<?php if ( is_active_sidebar( 'footer-two' ) ) {
+						dynamic_sidebar( 'footer-two' );
+					} ?>
                 </div>
 
                 <div class="col-md-3 col-sm-6">
-	                <?php if ( is_active_sidebar( 'footer-three' ) ) {
-		                dynamic_sidebar( 'footer-three' );
-	                } ?>
+					<?php if ( is_active_sidebar( 'footer-three' ) ) {
+						dynamic_sidebar( 'footer-three' );
+					} ?>
                 </div>
 
                 <div class="col-md-3 col-sm-6">
-	                <?php if ( is_active_sidebar( 'footer-four' ) ) {
-		                dynamic_sidebar( 'footer-four' );
-	                } ?>
+					<?php if ( is_active_sidebar( 'footer-four' ) ) {
+						dynamic_sidebar( 'footer-four' );
+					} ?>
                 </div>
             </div>
         </div>
@@ -34,9 +34,9 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
-	            <?php if ( is_active_sidebar( 'footer-copyright' ) ) {
-		            dynamic_sidebar( 'footer-copyright' );
-	            } ?>
+                <div class="col-md-12 text-center">
+                    <p><?php esc_html_e( get_theme_mod( 'keira_copyright_text' ), 'keira' ); ?></p>
+                </div>
             </div>
         </div>
     </div>
