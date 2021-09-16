@@ -19,5 +19,6 @@ require_once 'customizer/portfolio.php';
 require_once 'customizer/team.php';
 require_once 'customizer/blog.php';
 require_once 'customizer/testimonial.php';
+require_once 'customizer/contact.php';
 require_once 'customizer/client.php';
 require_once 'customizer/copyright.php';

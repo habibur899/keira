@@ -384,7 +384,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="section-header">
-                            <h2><span>Contact</span> Me</h2>
+                            <h2>
+                                <span><?php esc_html_e( get_theme_mod( 'keira_contact_heading_color' ), 'keira' ); ?></span> <?php esc_html_e( get_theme_mod( 'keira_contact_heading_white' ), 'keira' ); ?>
+                            </h2>
                             <p class="sec-icon"><i class="fa fa-envelope-o"></i></p>
                         </div>
                     </div>
@@ -449,94 +451,34 @@
                     </div>
                     <div class="col-sm-6 col-xs-12 col-md-6">
                         <div class="con-right-side">
-                            <h4 class="con-right-header">Frequently Asked Questions</h4>
+                            <h4 class="con-right-header"><?php esc_html_e( get_theme_mod( 'keira_contact_faq_heading' ), 'keira' ); ?></h4>
                             <div class="middle-space"></div>
                             <!-- con-right-accordion Starts -->
                             <div class="panel-group" id="con-right-accordion">
-                                <!-- con-right-accordion #1 Starts -->
-                                <div class="panel">
-                                    <!-- Panel Heading Starts -->
-                                    <div class="panel-heading">
-                                        <h5 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#con-right-accordion"
-                                               href="#collapse1">What is order Policy?</a>
-                                        </h5>
-                                    </div>
-                                    <!-- Panel Heading Ends -->
-                                    <!-- Panel Body Starts -->
-                                    <div id="collapse1" class="panel-collapse collapse in">
-                                        <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi
-                                                eius est expedita illum praesentium quaerat quia, reprehenderit sequi
-                                                temporibus ut voluptate voluptatum. Enim, officia.</p>
+
+								<?php $faqs = get_theme_mod( 'keira_faq_repeater' ); ?>
+								<?php foreach ( $faqs as $faq ) : ?>
+                                    <!-- con-right-accordion #1 Starts -->
+                                    <div class="panel">
+                                        <!-- Panel Heading Starts -->
+                                        <div class="panel-heading">
+                                            <h5 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#con-right-accordion"
+                                                   href="#collapse1"><?php esc_html_e($faq['keira_contact_title'],'keira') ?></a>
+                                            </h5>
                                         </div>
-                                    </div>
-                                    <!-- Panel Body Ends -->
-                                </div>
-                                <!-- con-right-accordion #1 Ends -->
-                                <!-- con-right-accordion #2 Starts -->
-                                <div class="panel">
-                                    <!-- Panel Heading Starts -->
-                                    <div class="panel-heading">
-                                        <h5 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#con-right-accordion"
-                                               href="#collapse2">When You receive Order?</a>
-                                        </h5>
-                                    </div>
-                                    <!-- Panel Heading Ends -->
-                                    <!-- Panel Body Starts -->
-                                    <div id="collapse2" class="panel-collapse collapse">
-                                        <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi
-                                                eius est expedita illum praesentium quaerat quia, reprehenderit sequi
-                                                temporibus ut voluptate voluptatum. Enim, officia.</p>
+                                        <!-- Panel Heading Ends -->
+                                        <!-- Panel Body Starts -->
+                                        <div id="collapse1" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <p><?php esc_html_e($faq['keira_contact_description'],'keira') ?></p>
+                                            </div>
                                         </div>
+                                        <!-- Panel Body Ends -->
                                     </div>
-                                    <!-- Panel Body Ends -->
-                                </div>
-                                <!-- con-right-accordion #2 Ends -->
-                                <!-- con-right-accordion #3 Starts -->
-                                <div class="panel">
-                                    <!-- Panel Heading Starts -->
-                                    <div class="panel-heading">
-                                        <h5 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#con-right-accordion"
-                                               href="#collapse3">How Does it Work?</a>
-                                        </h5>
-                                    </div>
-                                    <!-- Panel Heading Ends -->
-                                    <!-- Panel Body Starts -->
-                                    <div id="collapse3" class="panel-collapse collapse">
-                                        <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi
-                                                eius est expedita illum praesentium quaerat quia, reprehenderit sequi
-                                                temporibus ut voluptate voluptatum. Enim, officia.</p>
-                                        </div>
-                                    </div>
-                                    <!-- Panel Body Ends -->
-                                </div>
-                                <!-- con-right-accordion #3 Ends -->
-                                <!-- con-right-accordion #4 Starts -->
-                                <div class="panel">
-                                    <!-- Panel Heading Starts -->
-                                    <div class="panel-heading">
-                                        <h5 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#con-right-accordion"
-                                               href="#collapse4">How to Refund Order?</a>
-                                        </h5>
-                                    </div>
-                                    <!-- Panel Heading Ends -->
-                                    <!-- Panel Body Starts -->
-                                    <div id="collapse4" class="panel-collapse collapse">
-                                        <div class="panel-body">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias commodi
-                                                eius est expedita illum praesentium quaerat quia, reprehenderit sequi
-                                                temporibus ut voluptate voluptatum. Enim, officia.</p>
-                                        </div>
-                                    </div>
-                                    <!-- Panel Body Ends -->
-                                </div>
-                                <!-- con-right-accordion #4 Ends -->
+                                    <!-- con-right-accordion #1 Ends -->
+								<?php endforeach; ?>
+
                             </div>
                             <!-- con-right-accordion Ends -->
                         </div>
