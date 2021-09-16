@@ -119,29 +119,33 @@
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="single-count count-one xs-mb-30 sm-mb-30">
                             <i class="icon icon-clock"></i>
-                            <h2 class="count"><?php esc_html_e(get_theme_mod('keira_statistic_hour_number'),'keira');?></h2> <!--edit here-->
-                            <p><?php esc_html_e(get_theme_mod('keira_statistic_hour_title'),'keira');?></p>
+                            <h2 class="count"><?php esc_html_e( get_theme_mod( 'keira_statistic_hour_number' ), 'keira' ); ?></h2>
+                            <!--edit here-->
+                            <p><?php esc_html_e( get_theme_mod( 'keira_statistic_hour_title' ), 'keira' ); ?></p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="single-count count-two xs-mb-30 sm-mb-30">
                             <i class="icon icon-map-pin"></i>
-                            <h2 class="count"><?php esc_html_e(get_theme_mod('keira_statistic_location_number'),'keira');?></h2> <!--edit here-->
-                            <p><?php esc_html_e(get_theme_mod('keira_statistic_location_title'),'keira');?></p>
+                            <h2 class="count"><?php esc_html_e( get_theme_mod( 'keira_statistic_location_number' ), 'keira' ); ?></h2>
+                            <!--edit here-->
+                            <p><?php esc_html_e( get_theme_mod( 'keira_statistic_location_title' ), 'keira' ); ?></p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="single-count count-three xs-mb-30">
                             <i class="icon icon-happy"></i>
-                            <h2 class="count"><?php esc_html_e(get_theme_mod('keira_statistic_customer_number'),'keira');?></h2> <!--edit here-->
-                            <p><?php esc_html_e(get_theme_mod('keira_statistic_customer_title'),'keira');?></p>
+                            <h2 class="count"><?php esc_html_e( get_theme_mod( 'keira_statistic_customer_number' ), 'keira' ); ?></h2>
+                            <!--edit here-->
+                            <p><?php esc_html_e( get_theme_mod( 'keira_statistic_customer_title' ), 'keira' ); ?></p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="single-count count-four">
                             <i class="icon icon-trophy"></i>
-                            <h2 class="count"><?php esc_html_e(get_theme_mod('keira_statistic_awards_number'),'keira');?></h2> <!--edit here-->
-                            <p><?php esc_html_e(get_theme_mod('keira_statistic_awards_title'),'keira');?></p>
+                            <h2 class="count"><?php esc_html_e( get_theme_mod( 'keira_statistic_awards_number' ), 'keira' ); ?></h2>
+                            <!--edit here-->
+                            <p><?php esc_html_e( get_theme_mod( 'keira_statistic_awards_title' ), 'keira' ); ?></p>
                         </div>
                     </div>
                 </div>
@@ -159,7 +163,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header">
-                        <h2><span><?php esc_html_e(get_theme_mod('keira_portfolio_heading_color'),'keira');?></span> <?php esc_html_e(get_theme_mod('keira_portfolio_heading_white'),'keira');?></h2>
+                        <h2>
+                            <span><?php esc_html_e( get_theme_mod( 'keira_portfolio_heading_color' ), 'keira' ); ?></span> <?php esc_html_e( get_theme_mod( 'keira_portfolio_heading_white' ), 'keira' ); ?>
+                        </h2>
                         <p class="sec-icon"><i class="fa fa-image"></i></p>
                     </div>
                 </div>
@@ -172,10 +178,14 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <ul class="port-nav-list">
-                                <li><a class="img-filter active" data-filter="*">All</a></li>
-                                <li><a class="img-filter" data-filter=".design">Design</a></li>
-                                <li><a class="img-filter" data-filter=".web">Web</a></li>
-                                <li><a class="img-filter" data-filter=".video">Video</a></li>
+                                <li><a class="img-filter active" data-filter="*"><?php esc_html_e('All','keira');?></a></li>
+								<?php $terms = get_terms( 'portfolio_category' );
+								foreach ( $terms as $term ) :?>
+                                    <li><a class="img-filter"
+                                           data-filter=".<?php echo esc_attr( $term->slug ); ?>"><?php esc_html_e( $term->name, 'keira' ); ?></a>
+                                    </li>
+								<?php
+								endforeach; ?>
                             </ul>
                         </div>
                     </div>
@@ -184,102 +194,35 @@
 
             <div class="container">
                 <div class="row port-items" id="img-filter">
+					<?php $portfolio = new WP_Query( array(
+						'post_type'       => 'portfolio',
+						'posts_per_page ' => 6,
+						'order'           => 'ASC'
+					) ) ?>
+					<?php if ( have_posts() ):while ( $portfolio->have_posts() ):$portfolio->the_post(); ?>
+						<?php
+						?>
 
-                    <div class="col-md-4 col-sm-6 col-xs-12 single-port design photography">
-                        <div class="project-item">
-                            <a href="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-1.jpg"
-                               class="zoom1"> <!--edit image-->
-                                <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-1.jpg"
-                                     alt="portfolio image"> <!--edit image-->
-                                <div class="overlay">
-                                    <div class="overlay-inner">
-                                        <h4>Project One</h4>
-                                        <p>Web Design</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12 single-port<?php $terms = get_the_terms( get_the_ID(), 'portfolio_category' );
+						foreach ( $terms as $term ) {
+							echo esc_attr( " " . $term->slug . " " );
+						} ?>">
 
-                    <div class="col-md-4 col-sm-6 col-xs-12 single-port design">
-                        <div class="project-item">
-                            <a href="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-3.jpg"
-                               class="zoom1"> <!--edit image-->
-                                <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-3.jpg"
-                                     alt="portfolio image"> <!--edit image-->
-                                <div class="overlay">
-                                    <div class="overlay-inner">
-                                        <h4>Project Two</h4>
-                                        <p>Web Development</p>
+                            <div class="project-item">
+                                <a href="<?php echo esc_url( get_the_post_thumbnail_url() ) ?>" class="zoom1">
+                                    <!--edit image-->
+									<?php the_post_thumbnail(); ?>
+                                    <div class="overlay">
+                                        <div class="overlay-inner">
+                                            <h4><?php the_title() ?></h4>
+											<?php the_content(); ?>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6 col-xs-12 single-port photography">
-                        <div class="project-item">
-                            <a href="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-4.jpg"
-                               class="zoom1"> <!--edit image-->
-                                <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-4.jpg"
-                                     alt="portfolio image"> <!--edit image-->
-                                <div class="overlay">
-                                    <div class="overlay-inner">
-                                        <h4>Project Three</h4>
-                                        <p>Photography</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6 col-xs-12 single-port web video">
-                        <div class="project-item">
-                            <a href="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-6.jpg"
-                               class="zoom1"> <!--edit image-->
-                                <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-6.jpg"
-                                     alt="portfolio image"> <!--edit image-->
-                                <div class="overlay">
-                                    <div class="overlay-inner">
-                                        <h4>Project Four</h4>
-                                        <p>Product Design</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6 col-xs-12 single-port web design">
-                        <div class="project-item">
-                            <a href="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-2.jpg"
-                               class="zoom1"> <!--edit image-->
-                                <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-2.jpg"
-                                     alt="portfolio image"> <!--edit image-->
-                                <div class="overlay">
-                                    <div class="overlay-inner">
-                                        <h4>Project Five</h4>
-                                        <p>Digital Marketing</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6 col-xs-12 single-port branding video">
-                        <div class="project-item">
-                            <a href="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-5.jpg"
-                               class="zoom1"> <!--edit image-->
-                                <img src="<?php echo esc_url( get_template_directory_uri() ) ?>/assets/images/portfolio/port-5.jpg"
-                                     alt="portfolio image"> <!--edit image-->
-                                <div class="overlay">
-                                    <div class="overlay-inner">
-                                        <h4>Project Six</h4>
-                                        <p>Web Marketing</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+					<?php endwhile;endif;
+					wp_reset_query(); ?>
 
                 </div>
             </div>
