@@ -159,7 +159,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-header">
-                        <h2><span>My</span> Portfolio</h2>
+                        <h2><span><?php esc_html_e(get_theme_mod('keira_portfolio_heading_color'),'keira');?></span> <?php esc_html_e(get_theme_mod('keira_portfolio_heading_white'),'keira');?></h2>
                         <p class="sec-icon"><i class="fa fa-image"></i></p>
                     </div>
                 </div>

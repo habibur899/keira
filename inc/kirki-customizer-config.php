@@ -15,3 +15,4 @@ require_once 'customizer/banner.php';
 require_once 'customizer/about-me.php';
 require_once 'customizer/services.php';
 require_once 'customizer/statistic.php';
+require_once 'customizer/portfolio.php';
