@@ -27,28 +27,28 @@ Kirki::add_field( 'keira_config', [
 ] );
 
 Kirki::add_field( 'keira_config', [
-	'type'        => 'repeater',
-	'label'       => esc_html__( 'Add Your Services', 'keira' ),
-	'section'     => 'keira_services_section',
-	'priority'    => 10,
-	'row_label' => [
+	'type'         => 'repeater',
+	'label'        => esc_html__( 'Add Your Services', 'keira' ),
+	'section'      => 'keira_services_section',
+	'priority'     => 10,
+	'row_label'    => [
 		'type'  => 'text',
-		'value' => esc_html__( 'Service', 'keira' ),
+		'value' => esc_html__( 'Services', 'keira' ),
 	],
-	'button_label' => esc_html__('Add A New Service', 'keira' ),
+	'button_label' => esc_html__( 'Add A New Member', 'keira' ),
 	'settings'     => 'keira_services_repeater',
-	'fields' => [
-		'keira_services_icons' => [
-			'type'     => 'text',
+	'fields'       => [
+		'keira_services_icon'    => [
+			'type'        => 'text',
 			'label'       => esc_html__( 'Icon Link', 'keira' ),
-			'description' => esc_html__( 'Add fontawesome icon', 'keira' ),
+			'description' => esc_html__( 'Add services icon', 'keira' ),
 		],
 		'keira_services_heading' => [
 			'type'        => 'text',
 			'label'       => esc_html__( 'Heading', 'keira' ),
-			'description' => esc_html__( 'Add service heading', 'keira' ),
+			'description' => esc_html__( 'Add services heading', 'keira' ),
 		],
-		'keira_services_description'  => [
+		'keira_services_desc'    => [
 			'type'        => 'textarea',
 			'label'       => esc_html__( 'Description', 'keira' ),
 			'description' => esc_html__( 'Add services description', 'keira' ),

@@ -59,17 +59,32 @@ function my_theme_register_required_plugins() {
 	 */
 	$plugins = array(
 
-		//  Kirki
+		array(
+			'name'     => 'One Click Demo Import',
+			'slug'     => 'one-click-demo-import',
+			'required' => true
+		),
 		array(
 			'name'     => 'Kirki',
 			'slug'     => 'kirki',
 			'required' => true
 		),
 		array(
-			'name'     => 'Font Awesome',
-			'slug'     => 'font-awesome',
+			'name'     => 'Contact Form 7',
+			'slug'     => 'contact-form-7',
 			'required' => true
-		)
+		),
+		array(
+			'name'     => 'Better Font Awesome',
+			'slug'     => 'better-font-awesome',
+			'required' => false
+		),
+		array(
+			'name'               => 'Keira Core', // The plugin name.
+			'slug'               => 'keira-core', // The plugin slug (typically the folder name).
+			'source'             => get_template_directory_uri() . '/inc/plugins/keira-core.zip', // The plugin source.
+			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+		),
 
 	);
 

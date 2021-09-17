@@ -96,10 +96,9 @@
 				<?php foreach ( $services as $service ): ?>
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="single-service active lg-mb-30 xs-mb-30 sm-mb-30">
-                            <i class="icon icon-wallet"></i>
+							<?php echo do_shortcode( $service['keira_services_icon'] ) ?>
                             <h4><?php esc_html_e( $service['keira_services_heading'], 'keira' ); ?></h4>
-                            <p><?php esc_html_e( $service['keira_services_description'], 'keira' ); ?></p>
-                            <i class="icon icon-wallet animated-icon"></i>
+                            <p><?php esc_html_e( $service['keira_services_desc'], 'keira' ); ?></p>
                         </div>
                     </div>
 				<?php endforeach; ?>
@@ -394,59 +393,10 @@
 
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 box-contact-form">
-
-                        <form id="contact-form" method="post" action="https://mourithemes.com/keira/contact.php">
-
-                            <div class="messages"></div> <!--you can change the message in contact.php file -->
-
-                            <div class="controls">
-
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input id="form_name" type="text" name="name" class="form-control"
-                                                   placeholder="Name *" required="required"
-                                                   data-error="Fullname is required.">
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input id="form_email" type="email" name="email" class="form-control"
-                                                   placeholder="Email *" required="required"
-                                                   data-error="Valid email is required.">
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <input id="form_subject" type="text" name="subject" class="form-control"
-                                                   placeholder="Subject *" required="required"
-                                                   data-error="Subject is required.">
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <textarea id="form_message" name="message" class="form-control"
-                                                      placeholder="Message *" rows="4" required="required"
-                                                      data-error="Leave a message for me"></textarea>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button class="btn btn-send" value="">Send message</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </form>
+                        <div class="messages"></div> <!--you can change the message in contact.php file -->
+                        <div class="controls">
+							<?php echo do_shortcode( get_theme_mod( 'keira_contact_shortcode' ) ) ?>
+                        </div>
 
                     </div>
                     <div class="col-sm-6 col-xs-12 col-md-6">
@@ -455,29 +405,82 @@
                             <div class="middle-space"></div>
                             <!-- con-right-accordion Starts -->
                             <div class="panel-group" id="con-right-accordion">
-
-								<?php $faqs = get_theme_mod( 'keira_faq_repeater' ); ?>
-								<?php foreach ( $faqs as $faq ) : ?>
-                                    <!-- con-right-accordion #1 Starts -->
-                                    <div class="panel">
-                                        <!-- Panel Heading Starts -->
-                                        <div class="panel-heading">
-                                            <h5 class="panel-title">
-                                                <a data-toggle="collapse" data-parent="#con-right-accordion"
-                                                   href="#collapse1"><?php esc_html_e($faq['keira_contact_title'],'keira') ?></a>
-                                            </h5>
-                                        </div>
-                                        <!-- Panel Heading Ends -->
-                                        <!-- Panel Body Starts -->
-                                        <div id="collapse1" class="panel-collapse collapse">
-                                            <div class="panel-body">
-                                                <p><?php esc_html_e($faq['keira_contact_description'],'keira') ?></p>
-                                            </div>
-                                        </div>
-                                        <!-- Panel Body Ends -->
+                                <!-- con-right-accordion #1 Starts -->
+                                <div class="panel">
+                                    <!-- Panel Heading Starts -->
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#con-right-accordion"
+                                               href="#collapse1"><?php esc_html_e( get_theme_mod( 'keira_contact_faq_one' ), 'keira' ); ?></a>
+                                        </h5>
                                     </div>
-                                    <!-- con-right-accordion #1 Ends -->
-								<?php endforeach; ?>
+                                    <!-- Panel Heading Ends -->
+                                    <!-- Panel Body Starts -->
+                                    <div id="collapse1" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <p><?php esc_html_e( get_theme_mod( 'keira_contact_faq_one_desc' ), 'keira' ); ?></p>
+                                        </div>
+                                    </div>
+                                    <!-- Panel Body Ends -->
+                                </div>
+                                <!-- con-right-accordion #1 Ends -->
+                                <!-- con-right-accordion #2 Starts -->
+                                <div class="panel">
+                                    <!-- Panel Heading Starts -->
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#con-right-accordion"
+                                               href="#collapse2"><?php esc_html_e( get_theme_mod( 'keira_contact_faq_two' ), 'keira' ); ?></a>
+                                        </h5>
+                                    </div>
+                                    <!-- Panel Heading Ends -->
+                                    <!-- Panel Body Starts -->
+                                    <div id="collapse2" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p><?php esc_html_e( get_theme_mod( 'keira_contact_faq_two_desc' ), 'keira' ); ?></p>
+                                        </div>
+                                    </div>
+                                    <!-- Panel Body Ends -->
+                                </div>
+                                <!-- con-right-accordion #2 Ends -->
+                                <!-- con-right-accordion #3 Starts -->
+                                <div class="panel">
+                                    <!-- Panel Heading Starts -->
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#con-right-accordion"
+                                               href="#collapse3"><?php esc_html_e( get_theme_mod( 'keira_contact_faq_three' ), 'keira' ); ?></a>
+                                        </h5>
+                                    </div>
+                                    <!-- Panel Heading Ends -->
+                                    <!-- Panel Body Starts -->
+                                    <div id="collapse3" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p><?php esc_html_e( get_theme_mod( 'keira_contact_faq_three_desc' ), 'keira' ); ?></p>
+                                        </div>
+                                    </div>
+                                    <!-- Panel Body Ends -->
+                                </div>
+                                <!-- con-right-accordion #3 Ends -->
+                                <!-- con-right-accordion #4 Starts -->
+                                <div class="panel">
+                                    <!-- Panel Heading Starts -->
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#con-right-accordion"
+                                               href="#collapse4"><?php esc_html_e( get_theme_mod( 'keira_contact_faq_four' ), 'keira' ); ?></a>
+                                        </h5>
+                                    </div>
+                                    <!-- Panel Heading Ends -->
+                                    <!-- Panel Body Starts -->
+                                    <div id="collapse4" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <p><?php esc_html_e( get_theme_mod( 'keira_contact_faq_four_desc' ), 'keira' ); ?></p>
+                                        </div>
+                                    </div>
+                                    <!-- Panel Body Ends -->
+                                </div>
+                                <!-- con-right-accordion #4 Ends -->
 
                             </div>
                             <!-- con-right-accordion Ends -->

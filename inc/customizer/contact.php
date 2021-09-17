@@ -27,6 +27,15 @@ Kirki::add_field( 'keira_config', [
 ] );
 
 Kirki::add_field( 'keira_config', [
+	'type'     => 'editor',
+	'settings' => 'keira_contact_shortcode',
+	'label'    => esc_html__( 'Contact Form Shortcode', 'keira' ),
+	'description' => esc_html__( 'Keira contact form shortcode', 'keira' ),
+	'section'  => 'keira_contact_section',
+	'priority' => 10,
+] );
+
+Kirki::add_field( 'keira_config', [
 	'type'     => 'text',
 	'settings' => 'keira_contact_faq_heading',
 	'label'    => esc_html__( 'FAQ Heading', 'keira' ),
@@ -36,27 +45,68 @@ Kirki::add_field( 'keira_config', [
 ] );
 
 Kirki::add_field( 'keira_config', [
-	'type'         => 'repeater',
-	'label'        => esc_html__( 'Add Your FAQ', 'keira' ),
-	'section'      => 'keira_contact_section',
-	'priority'     => 10,
-	'row_label'    => [
-		'type'  => 'text',
-		'value' => esc_html__( 'FAQ', 'keira' ),
-	],
-	'button_label' => esc_html__( 'Add A New FAQ', 'keira' ),
-	'settings'     => 'keira_faq_repeater',
-	'fields'       => [
-		'keira_contact_title'     => [
-			'type'        => 'text',
-			'label'       => esc_html__( 'Title', 'keira' ),
-			'description' => esc_html__( 'Add faq title', 'keira' ),
-		],
-		'keira_contact_description' => [
-			'type'        => 'textarea',
-			'label'       => esc_html__( 'Description', 'keira' ),
-			'description' => esc_html__( 'Add faq description', 'keira' ),
-		],
+	'type'     => 'text',
+	'settings' => 'keira_contact_faq_one',
+	'label'    => esc_html__( 'FAQ Heading One', 'keira' ),
+	'section'  => 'keira_contact_section',
+	'priority' => 10,
+] );
 
-	]
+Kirki::add_field( 'keira_config', [
+	'type'     => 'textarea',
+	'settings' => 'keira_contact_faq_one_desc',
+	'label'    => esc_html__( 'FAQ Description One', 'keira' ),
+	'section'  => 'keira_contact_section',
+	'priority' => 10,
+] );
+
+
+Kirki::add_field( 'keira_config', [
+	'type'     => 'text',
+	'settings' => 'keira_contact_faq_two',
+	'label'    => esc_html__( 'FAQ Heading Two', 'keira' ),
+	'section'  => 'keira_contact_section',
+	'priority' => 10,
+] );
+
+Kirki::add_field( 'keira_config', [
+	'type'     => 'textarea',
+	'settings' => 'keira_contact_faq_two_desc',
+	'label'    => esc_html__( 'FAQ Description Two', 'keira' ),
+	'section'  => 'keira_contact_section',
+	'priority' => 10,
+] );
+
+
+Kirki::add_field( 'keira_config', [
+	'type'     => 'text',
+	'settings' => 'keira_contact_faq_three',
+	'label'    => esc_html__( 'FAQ Heading Three', 'keira' ),
+	'section'  => 'keira_contact_section',
+	'priority' => 10,
+] );
+
+Kirki::add_field( 'keira_config', [
+	'type'     => 'textarea',
+	'settings' => 'keira_contact_faq_three_desc',
+	'label'    => esc_html__( 'FAQ Description Three', 'keira' ),
+	'section'  => 'keira_contact_section',
+	'priority' => 10,
+] );
+
+
+Kirki::add_field( 'keira_config', [
+	'type'     => 'text',
+	'settings' => 'keira_contact_faq_four',
+	'label'    => esc_html__( 'FAQ Heading Four', 'keira' ),
+	'section'  => 'keira_contact_section',
+	'priority' => 10,
+] );
+
+Kirki::add_field( 'keira_config', [
+	'type'     => 'textarea',
+	'settings' => 'keira_contact_faq_four_desc',
+	'label'    => esc_html__( 'FAQ Description Four', 'keira' ),
+	'section'  => 'keira_contact_section',
+	'priority' => 10,
 ] );
