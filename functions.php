@@ -173,3 +173,6 @@ require_once 'inc/tgm-config.php';
 
 // Kirki
 require_once 'inc/kirki-customizer-config.php';
+
+// Demo import
+require_once 'inc/demo-import.php';
